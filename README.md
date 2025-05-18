@@ -38,8 +38,8 @@
     }
     }
 
-    Kelas anak mewarisi properti dan metode dari kelas induk.
-    SecurityConfig mewarisi WebSecurityConfigurerAdapter, sehingga dapat meng-override metode configure untuk mengatur otentikasi dan otorisasi.</p>
+Kelas anak mewarisi properti dan metode dari kelas induk.
+SecurityConfig mewarisi WebSecurityConfigurerAdapter, sehingga dapat meng-override metode configure untuk mengatur otentikasi dan otorisasi.</p>
 
 ### 2. Encapsulation
 <p> Contoh Enkapsulasi:
@@ -54,7 +54,7 @@
     private boolean completed;
     }
 
-    Atribut seperti id, title, dan completed bersifat private dan hanya bisa diakses melalui getter dan setter publik, melindungi data dari manipulasi langsung.
+  Atribut seperti id, title, dan completed bersifat private dan hanya bisa diakses melalui getter dan setter publik, melindungi data dari manipulasi langsung.
 </p>
 
 ### 3. Polymorphism
@@ -71,7 +71,7 @@
     }
     }
 
-    Kemampuan objek untuk mengambil banyak bentuk dan menjalankan fungsi yang sama dengan cara berbeda.
+  Kemampuan objek untuk mengambil banyak bentuk dan menjalankan fungsi yang sama dengan cara berbeda.
 </p>
 
 ### 4. Abstract
@@ -80,7 +80,7 @@
     public interface TodoRepository extends JpaRepository<Todo, Long> {
     // Spring Data JPA otomatis membuat query dari nama metode
     }
-    TodoRepository menggunakan abstraksi dari JpaRepository untuk menghindari penulisan SQL secara manual.
+  TodoRepository menggunakan abstraksi dari JpaRepository untuk menghindari penulisan SQL secara manual.
 </p>
 
 ## Demo Proyek
