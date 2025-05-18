@@ -86,5 +86,5 @@
 ## Demo Proyek
 <ul>
   <li>Github: <a href="">https://github.com/ikmalkh12/UTS_PBO2_TIF-K-23A_23552011373</a></li>
-  <li>Youtube: <a href="">Youtube</a></li>
+  <li>Youtube: <a href="">https://youtu.be/VAfPrTq8DKE</a></li>
 </ul>
