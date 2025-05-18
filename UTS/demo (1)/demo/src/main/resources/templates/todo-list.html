@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Daftar Tugas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f8f9fa;
+      margin: 40px 20px;
+      color: #202124;
+    }
+    h2 {
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin-bottom: 30px;
+    }
+    .header span {
+      font-size: 1.3rem;
+    }
+    .btn {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 3px 8px rgba(26, 115, 232, 0.4);
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #155ab6;
+      box-shadow: 0 5px 15px rgba(21, 90, 182, 0.7);
+    }
+    ul {
+      max-width: 900px;
+      padding-left: 0;
+      list-style: none;
+    }
+    li {
+      background: white;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+    }
+    li:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .todo-info {
+      max-width: 70%;
+    }
+    .todo-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #202124;
+      margin-bottom: 6px;
+    }
+    .todo-description {
+      font-size: 0.9rem;
+      color: #5f6368;
+    }
+    .todo-actions a {
+      margin-left: 12px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: white;
+      background-color: #1a73e8;
+      box-shadow: 0 3px 8px rgba(26, 115, 232, 0.4);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      user-select: none;
+    }
+    .todo-actions a:hover {
+      background-color: #155ab6;
+      box-shadow: 0 5px 15px rgba(21, 90, 182, 0.7);
+    }
+    .todo-actions a.delete {
+      background-color: #d93025;
+      box-shadow: 0 3px 8px rgba(217, 48, 37, 0.4);
+    }
+    .todo-actions a.delete:hover {
+      background-color: #a52714;
+      box-shadow: 0 5px 15px rgba(165, 39, 20, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span>Halo, <b th:text="${username}">User</b> 👋</span>
+    <div>
+      <a th:href="@{/todos/create}" class="btn">Tambah Tugas</a>
+      <a th:href="@{/logout}" class="btn" style="background-color:#d93025; margin-left: 12px;">Logout</a>
+    </div>
+  </div>
+
+  <ul>
+    <li th:each="todo : ${todos}">
+      <div class="todo-info">
+        <div class="todo-title" th:text="${todo.title}">Judul</div>
+        <div class="todo-description" th:text="${todo.description}">Deskripsi</div>
+      </div>
+      <div class="todo-actions">
+        <a th:href="@{/todos/edit/{id}(id=${todo.id})}">Edit</a>
+        <a class="delete" th:href="@{/todos/delete/{id}(id=${todo.id})}">Hapus</a>
+      </div>
+    </li>
+  </ul>
+</body>
+</html>

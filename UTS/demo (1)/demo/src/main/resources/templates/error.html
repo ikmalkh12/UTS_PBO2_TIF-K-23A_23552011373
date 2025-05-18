@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <h1>Terjadi Kesalahan</h1>
+    <p><strong>Status:</strong> <span th:text="${status}">500</span></p>
+    <p><strong>Error:</strong> <span th:text="${error}">Internal Server Error</span></p>
+    <p><strong>Pesan Error:</strong> <span th:text="${message}">Unknown</span></p>
+    <p><strong>Path:</strong> <span th:text="${path}">/</span></p>
+
+    <h3>Stack Trace:</h3>
+    <pre th:text="${trace}">No Trace</pre>
+</body>
+</html>
