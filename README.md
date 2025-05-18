@@ -75,7 +75,8 @@
 </p>
 
 ### 4. Abstract
-<p>Contoh Abstraksi:
+<p> Contoh Abstraksi:
+  
     public interface TodoRepository extends JpaRepository<Todo, Long> {
     // Spring Data JPA otomatis membuat query dari nama metode
     }
